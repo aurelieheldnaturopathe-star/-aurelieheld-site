@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Pages techniques non indexables
+Disallow: /liste-attente
+Disallow: /cgv
+Disallow: /mentions-legales
+
+# Sitemap
+Sitemap: https://aurelieheld.com/sitemap.xml

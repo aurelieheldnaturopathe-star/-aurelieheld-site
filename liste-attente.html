@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liste d'attente RESET — Aurélie Held Naturopathe</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --creme:      #FAF7F2;
+      --linen:      #EDE8DF;
+      --linen-deep: #E0D8CC;
+      --terracotta: #C4705A;
+      --terra-dark: #9E4E39;
+      --sage:       #4A5E3C;
+      --sage-light: #6B8F5A;
+      --bark:       #3D3028;
+      --bark-light: #6B5E54;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--creme); color: var(--bark); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.75; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(250,247,242,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(61,48,40,0.07); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--bark); text-decoration: none; }
+    .nav-back { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bark-light); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--terracotta); }
+
+    /* ── HERO ── */
+    .hero { margin-top: 72px; background: var(--bark); padding: 56px 48px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(196,112,90,0.15) 0%, transparent 60%); pointer-events: none; }
+    .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 16px; position: relative; z-index: 1; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 300; color: white; line-height: 1.1; position: relative; z-index: 1; margin-bottom: 14px; }
+    .hero h1 em { font-style: italic; color: var(--terracotta); }
+    .hero-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); position: relative; z-index: 1; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── BADGE PLACES LIMITÉES ── */
+    .badge-wrap { display: flex; justify-content: center; margin-top: 24px; position: relative; z-index: 1; }
+    .badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(196,112,90,0.15); border: 1px solid rgba(196,112,90,0.35); border-radius: 30px; padding: 8px 20px; }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terracotta); animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .badge p { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); margin: 0; font-weight: 400; }
+
+    /* ── LAYOUT ── */
+    .main-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 0; max-width: 1060px; margin: 0 auto; padding: 64px 32px 80px; align-items: start; }
+
+    /* ── COLONNE GAUCHE ── */
+    .recap { padding-right: 52px; position: sticky; top: 100px; }
+    .recap-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px; display: flex; align-items: center; gap: 0.7rem; }
+    .recap-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--terracotta); }
+    .recap h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 20px; }
+    .recap h2 em { font-style: italic; color: var(--terracotta); }
+    .recap-desc { font-size: 0.92rem; color: var(--bark-light); line-height: 1.85; margin-bottom: 28px; }
+
+    /* Ce que comprend RESET */
+    .recap-inclus { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .recap-inclus li { font-size: 0.85rem; color: var(--bark-light); display: flex; align-items: flex-start; gap: 10px; line-height: 1.55; }
+    .recap-inclus li::before { content: '✦'; font-size: 0.55rem; color: var(--terracotta); flex-shrink: 0; margin-top: 5px; }
+
+    /* Prix */
+    .prix-box { background: var(--linen); border-radius: 3px; padding: 20px 24px; margin-bottom: 20px; }
+    .prix-label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bark-light); margin-bottom: 6px; }
+    .prix-chiffre { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--bark); line-height: 1; }
+    .prix-chiffre span { font-size: 1rem; font-family: 'DM Sans', sans-serif; font-weight: 300; opacity: 0.5; }
+    .prix-detail { font-size: 0.78rem; color: var(--bark-light); margin-top: 5px; }
+    .prix-facilite { font-size: 0.78rem; color: var(--sage); margin-top: 3px; font-weight: 400; }
+
+    /* Pathologies */
+    .patho-box { border: 1px solid rgba(61,48,40,0.1); border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
+    .patho-header { background: var(--linen); padding: 12px 18px; border-bottom: 1px solid rgba(61,48,40,0.08); }
+    .patho-header p { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bark); margin: 0; }
+    .patho-body { padding: 16px 18px 20px; background: white; }
+    .patho-non { padding: 10px 14px; background: rgba(196,112,90,0.07); border-left: 2px solid var(--terracotta); border-radius: 2px; margin-bottom: 12px; }
+    .patho-non p { font-size: 0.78rem; color: var(--bark-light); margin: 0; line-height: 1.6; }
+    .patho-non strong { font-size: 0.7rem; color: var(--terracotta); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 3px; }
+    .patho-oui { display: flex; flex-direction: column; gap: 8px; }
+    .patho-item { padding: 10px 14px; background: rgba(74,94,60,0.05); border-left: 2px solid var(--sage-light); border-radius: 2px; }
+    .patho-item strong { font-size: 0.72rem; color: var(--sage); display: block; margin-bottom: 2px; }
+    .patho-item p { font-size: 0.78rem; color: var(--bark-light); margin: 0; line-height: 1.55; }
+
+    /* Disclaimer */
+    .disclaimer-box { background: rgba(196,112,90,0.06); border: 1px solid rgba(196,112,90,0.18); border-radius: 3px; padding: 16px 18px; }
+    .disclaimer-box p { font-size: 0.72rem; color: var(--bark-light); line-height: 1.65; margin: 0; }
+    .disclaimer-box strong { font-weight: 500; color: var(--bark); display: block; margin-bottom: 3px; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* ── COLONNE DROITE : FORMULAIRE ── */
+    .form-wrap { background: white; border: 0.5px solid rgba(61,48,40,0.1); border-radius: 4px; padding: 44px; }
+    .form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--bark); margin-bottom: 8px; }
+    .form-subtitle { font-size: 0.85rem; color: var(--bark-light); margin-bottom: 32px; line-height: 1.65; }
+
+    .form-group { margin-bottom: 22px; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bark); margin-bottom: 8px; }
+    .label-note { font-size: 0.72rem; font-weight: 300; text-transform: none; letter-spacing: 0; color: var(--bark-light); margin-left: 4px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 300; padding: 13px 16px; border: 1px solid rgba(61,48,40,0.18); border-radius: 3px; background: var(--creme); color: var(--bark); outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+    input::placeholder, textarea::placeholder { color: rgba(61,48,40,0.32); }
+    input:focus, select:focus, textarea:focus { border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(196,112,90,0.1); }
+    textarea { resize: vertical; min-height: 90px; }
+    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5E54' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+
+    .form-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--bark); margin: 28px 0 18px; padding-top: 24px; border-top: 1px solid rgba(61,48,40,0.08); }
+
+    /* Radio */
+    .radio-group { display: flex; flex-direction: column; gap: 9px; }
+    .radio-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+    .radio-item input[type="radio"] { width: 17px; height: 17px; flex-shrink: 0; appearance: none; border: 1px solid rgba(61,48,40,0.25); border-radius: 50%; background: var(--creme); cursor: pointer; position: relative; transition: border-color 0.15s; }
+    .radio-item input[type="radio"]:checked { border-color: var(--terracotta); }
+    .radio-item input[type="radio"]:checked::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 7px; height: 7px; border-radius: 50%; background: var(--terracotta); }
+    .radio-item label { font-size: 0.88rem; color: var(--bark-light); font-weight: 300; text-transform: none; letter-spacing: 0; cursor: pointer; margin: 0; }
+
+    /* Checkbox consent */
+    .consent-block { margin-top: 24px; padding: 18px; background: rgba(74,94,60,0.05); border-radius: 3px; }
+    .checkbox-item { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+    .checkbox-item input[type="checkbox"] { width: 17px; height: 17px; flex-shrink: 0; appearance: none; border: 1px solid rgba(61,48,40,0.25); border-radius: 2px; background: var(--creme); cursor: pointer; margin-top: 2px; transition: background 0.15s, border-color 0.15s; position: relative; }
+    .checkbox-item input[type="checkbox"]:checked { background: var(--terracotta); border-color: var(--terracotta); }
+    .checkbox-item input[type="checkbox"]:checked::after { content: '✓'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 0.6rem; font-weight: 700; }
+    .checkbox-item label { font-size: 0.82rem; color: var(--bark-light); font-weight: 300; text-transform: none; letter-spacing: 0; cursor: pointer; margin: 0; line-height: 1.55; }
+
+    /* Bouton */
+    .btn-submit { width: 100%; margin-top: 28px; background: var(--terracotta); color: white; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 17px 32px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+    .btn-submit:hover { background: var(--terra-dark); transform: translateY(-1px); }
+    .submit-note { text-align: center; margin-top: 12px; font-size: 0.72rem; color: var(--bark-light); line-height: 1.5; }
+
+    /* Succès */
+    .success-screen { display: none; text-align: center; padding: 48px 24px; }
+    .success-icon { width: 60px; height: 60px; border-radius: 50%; background: rgba(74,94,60,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.6rem; }
+    .success-screen h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 400; color: var(--bark); margin-bottom: 14px; }
+    .success-screen p { font-size: 0.9rem; color: var(--bark-light); line-height: 1.8; max-width: 360px; margin: 0 auto; }
+    .success-screen a { color: var(--terracotta); text-decoration: none; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--terra-dark); padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.88); text-decoration: none; }
+    footer p { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      nav { padding: 16px 20px; }
+      .main-layout { grid-template-columns: 1fr; gap: 40px; padding: 36px 20px 60px; }
+      .recap { padding-right: 0; position: static; }
+      .form-wrap { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero { padding: 44px 20px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Aurélie Held</a>
+  <a href="reset.html" class="nav-back">← Retour à RESET</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Programme RESET · Accompagnement individuel</p>
+  <h1>Rejoins la liste<br><em>d'attente</em></h1>
+  <p class="hero-sub">Les places s'ouvrent par vagues. Inscris-toi pour être contactée en priorité dès qu'une place se libère.</p>
+  <div class="badge-wrap">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      <p>Places limitées · Ouverture prochaine</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENU -->
+<div class="main-layout">
+
+  <!-- COLONNE GAUCHE -->
+  <div class="recap">
+    <p class="recap-label">Ce que tu rejoins</p>
+    <h2>RESET —<br><em>L'accompagnement<br>sur-mesure</em></h2>
+    <p class="recap-desc">Un accompagnement naturopathique individuel sur 4 mois, pour aller chercher les causes profondes de tes déséquilibres digestifs, inflammatoires et hormonaux, et construire avec toi une stratégie durable.</p>
+
+    <ul class="recap-inclus">
+      <li>4 séances individuelles en 1:1 (dont 1 bilan de 1h30 et 1 clôture de 30 min)</li>
+      <li>2 lives collectifs thématiques</li>
+      <li>Protocole personnalisé après chaque séance</li>
+      <li>Orientation vers des tests de biologie fonctionnelle si pertinent</li>
+      <li>Ressources pratiques : fiches alimentation, recettes adaptées</li>
+      <li>Suivi par mail et accès au groupe WhatsApp</li>
+    </ul>
+
+    <div class="prix-box">
+      <p class="prix-label">Investissement</p>
+      <p class="prix-chiffre">570 <span>€</span></p>
+      <p class="prix-detail">Programme complet · 4 mois</p>
+      <p class="prix-facilite">Paiement en 3 fois possible</p>
+    </div>
+
+    <div class="patho-box">
+      <div class="patho-header">
+        <p>Pathologies prises en charge</p>
+      </div>
+      <div class="patho-body">
+        <div class="patho-non">
+          <p><strong>Je n'accompagne pas</strong>Cancers, maladie de Lyme, TCA. Enfants de moins de 15 ans.</p>
+        </div>
+        <div class="patho-oui">
+          <div class="patho-item">
+            <strong>Troubles auto-immuns</strong>
+            <p>Spondylarthrite, polyarthrite, Hashimoto, Basedow, fibromyalgie, psoriasis, lupus</p>
+          </div>
+          <div class="patho-item">
+            <strong>Déséquilibres hormonaux</strong>
+            <p>SOPK, endométriose, aménorrhée, acné, SPM, désir de grossesse</p>
+          </div>
+          <div class="patho-item">
+            <strong>Troubles digestifs</strong>
+            <p>SIBO, candidose, intolérance à l'histamine, SII, troubles sans diagnostic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer-box">
+      <p><strong>Important</strong>Un accompagnement naturopathique ne se substitue pas à la médecine allopathique ni à un traitement en cours. Aucun diagnostic médical n'est effectué.</p>
+    </div>
+  </div>
+
+  <!-- COLONNE DROITE : FORMULAIRE -->
+  <div class="form-wrap">
+    <div id="form-content">
+      <h2 class="form-title">Ton inscription</h2>
+      <p class="form-subtitle">Remplis ce formulaire en 2 minutes. Aurélie te contactera personnellement dès qu'une place se libère — en priorité selon l'ordre d'inscription et la compatibilité de ta situation.</p>
+
+      <form id="waitlist-form" onsubmit="handleSubmit(event)" novalidate>
+
+        <!-- INFOS -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom <span class="label-note">*</span></label>
+            <input type="text" id="prenom" name="prenom" placeholder="Ton prénom" required autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom <span class="label-note">*</span></label>
+            <input type="text" id="nom" name="nom" placeholder="Ton nom" required autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse email <span class="label-note">*</span></label>
+          <input type="email" id="email" name="email" placeholder="ton@email.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="tel">Téléphone <span class="label-note">facultatif</span></label>
+          <input type="tel" id="tel" name="tel" placeholder="06 00 00 00 00" autocomplete="tel">
+        </div>
+
+        <!-- TA SITUATION -->
+        <h3 class="form-section-title">Ta situation en quelques mots</h3>
+
+        <div class="form-group">
+          <label for="situation">Ce que tu vis en ce moment <span class="label-note">*</span></label>
+          <textarea id="situation" name="situation" placeholder="Depuis combien de temps tu vis ça ? Quels sont les principaux déséquilibres que tu ressens ? Qu'est-ce que tu as déjà essayé ?" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="diagnostic">As-tu un diagnostic médical en cours ?</label>
+          <textarea id="diagnostic" name="diagnostic" placeholder="Si oui, lequel ? As-tu un suivi médical en parallèle ?" style="min-height:70px;"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="objectif">Ce que tu veux retrouver <span class="label-note">*</span></label>
+          <textarea id="objectif" name="objectif" placeholder="Qu'est-ce qui changerait dans ta vie si tu allais mieux ?" required style="min-height:70px;"></textarea>
+        </div>
+
+        <!-- SOURCE -->
+        <div class="form-group">
+          <label>Comment as-tu entendu parler de RESET ?</label>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="source" value="instagram"><label>Instagram (@aurelieheld.naturo)</label></label>
+            <label class="radio-item"><input type="radio" name="source" value="bouche_a_oreille"><label>Recommandation d'une proche</label></label>
+            <label class="radio-item"><input type="radio" name="source" value="google"><label>Recherche Google</label></label>
+            <label class="radio-item"><input type="radio" name="source" value="autre"><label>Autre</label></label>
+          </div>
+        </div>
+
+        <!-- CONSENTEMENT -->
+        <div class="consent-block">
+          <label class="checkbox-item">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">J'ai pris connaissance que cet accompagnement ne se substitue pas à la médecine allopathique ni à un traitement médical en cours, et qu'aucun diagnostic médical ne sera posé lors des séances.</label>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submit-btn">
+          M'inscrire sur la liste d'attente →
+        </button>
+        <p class="submit-note">
+          Inscription sans engagement · Aurélie te contacte personnellement<br>
+          dès qu'une place se libère
+        </p>
+
+      </form>
+    </div>
+
+    <!-- SUCCÈS -->
+    <div class="success-screen" id="success-screen">
+      <div class="success-icon">✦</div>
+      <h3>Tu es sur la liste !</h3>
+      <p>Ton inscription est bien enregistrée. Aurélie te contactera personnellement dès qu'une place se libère dans RESET, en priorité selon l'ordre d'inscription.<br><br>
+      En attendant, retrouve-la sur Instagram pour du contenu naturopathie au quotidien :<br>
+      <a href="https://www.instagram.com/aurelieheld.naturo/" target="_blank" rel="noopener">@aurelieheld.naturo</a></p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="footer-logo">Aurélie Held · Naturopathe</a>
+  <p>aurelieheld.naturopathe@gmail.com · 06 19 49 64 97</p>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('waitlist-form');
+  const btn  = document.getElementById('submit-btn');
+
+  /* Validation */
+  let valid = true;
+  form.querySelectorAll('[required]').forEach(field => {
+    field.style.borderColor = '';
+    if (field.type === 'checkbox' && !field.checked) {
+      field.parentElement.style.outline = '2px solid rgba(196,112,90,0.5)';
+      field.parentElement.style.borderRadius = '3px';
+      valid = false;
+    } else if (field.type !== 'checkbox' && !field.value.trim()) {
+      field.style.borderColor = 'rgba(196,112,90,0.7)';
+      valid = false;
+    }
+  });
+
+  if (!valid) {
+    const first = form.querySelector('[required][style*="border-color"], [required]:invalid');
+    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  /* Collecte */
+  const data = {};
+  new FormData(form).forEach((val, key) => {
+    data[key] = data[key] ? [].concat(data[key], val) : val;
+  });
+
+  btn.textContent = 'Inscription en cours...';
+  btn.disabled = true;
+
+  /* Envoi Formspree — remplace VOTRE_ID */
+  fetch('https://formspree.io/f/VOTRE_ID', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(() => showSuccess())
+  .catch(() => showSuccess());
+}
+
+function showSuccess() {
+  document.getElementById('form-content').style.display = 'none';
+  const s = document.getElementById('success-screen');
+  s.style.display = 'block';
+  s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
+</html>

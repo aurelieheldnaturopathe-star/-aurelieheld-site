@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurélie Held, Naturopathe fonctionnelle & Cheffe cuisine santé</title>
+<meta name="description" content="Aurélie Held, naturopathe certifiée spécialisée dans les troubles digestifs, inflammatoires et hormonaux. Programme RESET, accompagnement sur-mesure 6 mois.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════
+   VARIABLES & RESET
+══════════════════════════════════════════ */
+:root {
+  --cream: #FAF7F2;
+  --warm-linen: #F2EDE4;
+  --terracotta: #C4705A;
+  --terracotta-light: #E8B5A4;
+  --terracotta-dark: #9E4E39;
+  --sage-light: #C5D0B8;
+  --sage-dark: #4A5E3C;
+  --sage-bg: #EDF1E8;
+  --bark: #3D3028;
+  --bark-mid: #6B5849;
+  --linen: #EDE8DF;
+  --linen-deep: #E0D8CC;
+  --green-reset: #5C7A48;
+  --green-strip: #4A5E3C;
+  --green-cta: #6B8F5A;
+  --gold: #C9A96E;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--bark); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ══════════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes scrollAvis {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.fade-up { animation: fadeUp 0.8s ease forwards; }
+.fade-up-2 { animation: fadeUp 0.8s 0.15s ease both; }
+.fade-up-3 { animation: fadeUp 0.8s 0.3s ease both; }
+.fade-up-4 { animation: fadeUp 0.8s 0.45s ease both; }
+.fade-up-5 { animation: fadeUp 0.8s 0.6s ease both; }
+
+/* ══════════════════════════════════════════
+   UTILITAIRES
+══════════════════════════════════════════ */
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--bark-mid); margin-bottom: 1.2rem;
+}
+.section-label::before {
+  content: ''; display: block; width: 24px; height: 1px; background: var(--terracotta);
+}
+
+/* ══════════════════════════════════════════
+   BOUTONS
+══════════════════════════════════════════ */
+.btn-primary {
+  background: var(--terracotta); color: white;
+  padding: 0.95rem 2.4rem;
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 2px; display: inline-block;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+  border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+}
+.btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(196,112,90,0.3); }
+
+.btn-ghost {
+  color: var(--bark); font-size: 0.78rem; letter-spacing: 0.1em;
+  text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem;
+  border-bottom: 1px solid rgba(61,48,40,0.35); padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+.btn-ghost-light {
+  color: rgba(250,247,242,0.8); font-size: 0.78rem; letter-spacing: 0.1em;
+  text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem;
+  border-bottom: 1px solid rgba(250,247,242,0.35); padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.btn-ghost-light:hover { color: var(--terracotta-light); }
+
+.btn-cream {
+  background: var(--cream); color: var(--green-reset);
+  padding: 0.9rem 2.2rem; font-size: 0.78rem; letter-spacing: 0.12em;
+  text-transform: uppercase; border-radius: 2px; display: inline-block;
+  font-weight: 500; transition: background 0.25s, transform 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.btn-cream:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(250,247,242,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(138,155,124,0.18);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(61,48,40,0.08); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--bark); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+.nav-links a { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bark-mid); transition: color 0.2s; }
+.nav-links a:hover { color: var(--terracotta); }
+.nav-cta {
+  background: var(--terracotta) !important; color: white !important;
+  padding: 0.55rem 1.4rem; border-radius: 2px;
+  font-size: 0.73rem !important; letter-spacing: 0.1em !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--terracotta-dark) !important; }
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 5rem;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texture subtile en background */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 80%, rgba(196,112,90,0.04) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(74,94,60,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 4rem 5rem 6rem;
+  position: relative; z-index: 1;
+}
+
+.hero-eyebrow {
+  font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--bark-mid); margin-bottom: 1.4rem; margin-top: 0.6rem;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-weight: 300; line-height: 0.95;
+  color: var(--bark); margin-bottom: 1.4rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-specialite {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 300; font-style: italic;
+  color: var(--bark-mid); margin-bottom: 1.4rem; line-height: 1.4;
+}
+
+.hero-pills {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;
+}
+.hero-pill {
+  font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--bark-mid); background: white;
+  padding: 0.38rem 0.9rem; border-radius: 30px;
+  border: 0.5px solid var(--linen-deep);
+  transition: border-color 0.2s, color 0.2s;
+}
+.hero-pill:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+.hero-sub {
+  font-size: 1rem; color: var(--bark-mid);
+  max-width: 400px; line-height: 1.85;
+  margin-bottom: 2.5rem;
+  border-left: 2px solid var(--sage-light); padding-left: 1.3rem;
+}
+
+.hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+
+.hero-trust {
+  display: flex; align-items: center; gap: 0.8rem;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 0.5px solid var(--linen-deep);
+}
+.hero-trust-stars { display: flex; gap: 2px; }
+.hero-trust-star { width: 13px; height: 13px; background: #FBBC04; clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+.hero-trust-score { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--bark); line-height: 1; }
+.hero-trust-text { font-size: 0.78rem; color: var(--bark-mid); line-height: 1.4; }
+.hero-trust-text strong { color: var(--bark); font-weight: 500; display: block; }
+
+.hero-right {
+  position: relative; overflow: hidden;
+  background: var(--linen);
+}
+.hero-right img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 15%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.hero-right:hover img { transform: scale(1.02); }
+
+/* ══════════════════════════════════════════
+   SCROLL STRIP
+══════════════════════════════════════════ */
+.scroll-strip { background: var(--green-strip); padding: 1rem 0; overflow: hidden; white-space: nowrap; }
+.scroll-track { display: inline-flex; animation: scrollLeft 30s linear infinite; }
+.scroll-track:hover { animation-play-state: paused; }
+.scroll-item { display: inline-flex; align-items: center; gap: 1.2rem; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-light); padding: 0 2.5rem; }
+.scroll-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--terracotta-light); flex-shrink: 0; }
+
+/* ══════════════════════════════════════════
+   MON HISTOIRE
+══════════════════════════════════════════ */
+.story {
+  padding: 7rem 6rem;
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: 7rem; align-items: center;
+  background: var(--warm-linen);
+}
+.story-visual { position: relative; }
+.story-visual img {
+  width: 100%; aspect-ratio: 3/4;
+  object-fit: cover; object-position: center top;
+  border-radius: 2px; display: block;
+  filter: brightness(0.97) saturate(1.05);
+}
+.story-quote-box {
+  position: absolute; right: -2.5rem; bottom: 3rem;
+  background: var(--terracotta);
+  padding: 1.8rem 2rem; max-width: 240px; border-radius: 2px;
+  box-shadow: 0 16px 48px rgba(196,112,90,0.25);
+}
+.story-quote-box p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-style: italic; font-weight: 300;
+  color: white; line-height: 1.6;
+}
+.story-content { display: flex; flex-direction: column; }
+.story-label {
+  font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--terracotta); margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.story-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--terracotta); }
+.story-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  font-weight: 300; line-height: 1.15; color: var(--bark); margin-bottom: 1.5rem;
+}
+.story-content h2 em { color: var(--terracotta); font-style: italic; }
+.story-content p { color: var(--bark-mid); margin-bottom: 1rem; line-height: 1.85; font-size: 0.96rem; }
+.story-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--bark); font-size: 0.78rem; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-top: 1rem;
+  border-bottom: 1px solid rgba(61,48,40,0.3); padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.story-link:hover { color: var(--terracotta); }
+
+/* ══════════════════════════════════════════
+   MON APPROCHE — bloc unifié premium
+══════════════════════════════════════════ */
+.approche { background: var(--linen); }
+
+.approche-header {
+  padding: 6rem 8rem 4rem;
+  text-align: center;
+  max-width: 900px; margin: 0 auto;
+}
+.approche-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  font-weight: 300; line-height: 1.15; color: var(--bark);
+  margin-top: 1rem; margin-bottom: 1.5rem;
+}
+.approche-header h2 em { color: var(--terracotta); font-style: italic; }
+.approche-header p { color: var(--bark-mid); line-height: 1.9; font-size: 0.97rem; max-width: 680px; margin: 0 auto; }
+
+/* Piliers — 4 colonnes sur fond crème */
+.piliers-wrap { background: var(--cream); padding: 3.5rem 6rem 4.5rem; }
+.piliers-intro { text-align: center; margin-bottom: 3rem; }
+.piliers-intro h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 300; color: var(--bark);
+}
+.piliers-intro h3 em { font-style: italic; color: var(--terracotta); }
+.piliers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.pilier {
+  padding: 2.2rem 1.8rem;
+  background: white;
+  border: 0.5px solid var(--linen);
+  border-radius: 3px;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  cursor: default;
+}
+.pilier:hover {
+  box-shadow: 0 12px 40px rgba(61,48,40,0.08);
+  transform: translateY(-4px);
+  border-color: var(--terracotta-light);
+}
+.pilier-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300; font-style: italic;
+  color: var(--terracotta); margin-bottom: 0.8rem; line-height: 1;
+}
+.pilier h4 {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--bark); margin-bottom: 0.6rem;
+}
+.pilier p { font-size: 0.85rem; color: var(--bark-mid); line-height: 1.75; }
+.pilier-icon { font-size: 1.4rem; margin-bottom: 0.8rem; display: block; }
+
+/* ══════════════════════════════════════════
+   RESET
+══════════════════════════════════════════ */
+.reset-section {
+  background: var(--green-reset);
+  padding: 7rem 6rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: center;
+  position: relative; overflow: hidden;
+}
+.reset-section::before {
+  content: 'RESET';
+  position: absolute; right: -2rem; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18rem; font-weight: 300;
+  color: rgba(255,255,255,0.04);
+  line-height: 1; pointer-events: none;
+  user-select: none;
+}
+.reset-label {
+  font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(250,247,242,0.6); margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.reset-label::before { content: ''; width: 24px; height: 1px; background: var(--terracotta-light); display: block; }
+.reset-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 3.8vw, 4rem);
+  font-weight: 300; color: var(--cream); line-height: 1.05; margin-bottom: 1.5rem;
+}
+.reset-section h2 em { color: var(--terracotta-light); font-style: italic; }
+.reset-desc { color: rgba(250,247,242,0.75); margin-bottom: 2rem; line-height: 1.85; font-size: 0.97rem; }
+.reset-price-wrap { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 0.5rem; }
+.reset-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 300; color: var(--cream); line-height: 1;
+}
+.reset-price-label { font-size: 0.75rem; color: rgba(250,247,242,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
+.reset-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+
+.reset-card {
+  background: rgba(255,255,255,0.08);
+  border: 0.5px solid rgba(255,255,255,0.18);
+  border-radius: 4px; padding: 2.8rem;
+  backdrop-filter: blur(10px);
+  position: relative; z-index: 1;
+}
+.reset-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 400; color: var(--cream);
+  margin-bottom: 2rem;
+}
+.reset-items { list-style: none; display: flex; flex-direction: column; gap: 1.3rem; }
+.reset-items li {
+  display: flex; align-items: flex-start; gap: 1rem;
+  color: rgba(250,247,242,0.85); font-size: 0.93rem; line-height: 1.65;
+}
+.reset-check {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--terracotta); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; margin-top: 2px;
+}
+.reset-check::after { content: '✓'; color: white; font-size: 0.62rem; font-weight: 700; }
+.reset-format {
+  margin-top: 2.2rem; padding-top: 1.8rem;
+  border-top: 0.5px solid rgba(255,255,255,0.15);
+  display: flex; gap: 2.5rem;
+}
+.reset-format-item .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300; color: var(--terracotta-light); line-height: 1;
+}
+.reset-format-item .lbl { font-size: 0.68rem; color: rgba(250,247,242,0.45); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
+
+/* ══════════════════════════════════════════
+   LISTE D'ATTENTE
+══════════════════════════════════════════ */
+.waitlist {
+  background: var(--bark);
+  padding: 6rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.waitlist::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(196,112,90,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.waitlist .section-label { justify-content: center; color: rgba(250,247,242,0.45); }
+.waitlist .section-label::before { background: var(--terracotta-light); }
+.waitlist h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 300; color: var(--cream); line-height: 1.1;
+  max-width: 700px; margin: 0 auto 1.5rem;
+  position: relative; z-index: 1;
+}
+.waitlist h2 em { color: var(--terracotta-light); font-style: italic; }
+.waitlist-sub {
+  color: rgba(250,247,242,0.65); font-size: 1rem; line-height: 1.8;
+  max-width: 520px; margin: 0 auto 3rem;
+  position: relative; z-index: 1;
+}
+.waitlist-form {
+  display: flex; gap: 0; max-width: 480px;
+  margin: 0 auto 1.2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border-radius: 3px; overflow: hidden;
+  position: relative; z-index: 1;
+}
+.waitlist-input {
+  flex: 1; padding: 1rem 1.5rem;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+  border: none; outline: none;
+  background: rgba(255,255,255,0.95); color: var(--bark);
+}
+.waitlist-input::placeholder { color: var(--bark-mid); }
+.waitlist-btn {
+  background: var(--terracotta); color: white;
+  padding: 1rem 2rem; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+  transition: background 0.2s; white-space: nowrap;
+}
+.waitlist-btn:hover { background: var(--terracotta-dark); }
+.waitlist-note {
+  font-size: 0.75rem; color: rgba(250,247,242,0.4);
+  position: relative; z-index: 1;
+}
+.waitlist-stats {
+  display: flex; gap: 3rem; justify-content: center;
+  margin-top: 3.5rem; padding-top: 3rem;
+  border-top: 0.5px solid rgba(255,255,255,0.08);
+  position: relative; z-index: 1;
+}
+.waitlist-stat .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 300; color: var(--terracotta-light);
+  line-height: 1; display: block;
+}
+.waitlist-stat .lbl { font-size: 0.72rem; color: rgba(250,247,242,0.45); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* ══════════════════════════════════════════
+   CUISINE SANTÉ
+══════════════════════════════════════════ */
+.cuisine {
+  background: var(--cream);
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+.cuisine-content {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5.5rem 5rem;
+}
+.cuisine-eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); font-style: italic; margin-bottom: 0.5rem; }
+.cuisine-sublabel { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bark-mid); margin-bottom: 1.5rem; }
+.cuisine-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-weight: 300; color: var(--bark); line-height: 1.12; margin-bottom: 1.5rem;
+}
+.cuisine-content h2 em { color: var(--terracotta); font-style: italic; }
+.cuisine-content p { color: var(--bark-mid); margin-bottom: 1rem; line-height: 1.85; font-size: 0.96rem; }
+.cuisine-services { display: flex; gap: 0; margin: 1.2rem 0 2rem; flex-direction: column; }
+.cuisine-service { font-size: 0.8rem; color: var(--bark-mid); padding: 0.4rem 0; display: flex; align-items: center; gap: 0.7rem; border-bottom: 0.5px solid var(--linen-deep); }
+.cuisine-service:first-child { border-top: 0.5px solid var(--linen-deep); }
+.cuisine-service::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; }
+.cuisine-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-sage { background: var(--sage-dark); color: var(--cream); padding: 0.85rem 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: background 0.25s; font-family: 'DM Sans', sans-serif; }
+.btn-sage:hover { background: var(--bark); }
+.btn-sage-outline { color: var(--sage-dark); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; padding-bottom: 2px; border-bottom: 1px solid var(--sage-dark); transition: color 0.2s; }
+.btn-sage-outline:hover { color: var(--terracotta); border-color: var(--terracotta); }
+.cuisine-photo { overflow: hidden; position: relative; }
+.cuisine-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.cuisine-photo:hover img { transform: scale(1.03); }
+
+/* ══════════════════════════════════════════
+   AVIS GOOGLE
+══════════════════════════════════════════ */
+.avis { background: var(--warm-linen); padding: 6rem; overflow: hidden; }
+.avis-header { text-align: center; margin-bottom: 4rem; }
+.avis-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 300; color: var(--bark); margin-bottom: 1.5rem;
+}
+.avis-google-badge { display: flex; align-items: center; gap: 1.5rem; justify-content: center; margin-top: 1.5rem; }
+.avis-score { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--bark); line-height: 1; }
+.avis-meta { display: flex; flex-direction: column; gap: 0.3rem; }
+.stars-row { display: flex; gap: 3px; }
+.star { width: 15px; height: 15px; clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); background: #FBBC04; }
+.avis-count { font-size: 0.82rem; color: var(--bark-mid); margin-top: 0.2rem; }
+.avis-track-wrap { overflow: hidden; position: relative; }
+.avis-track-wrap::before, .avis-track-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none; }
+.avis-track-wrap::before { left: 0; background: linear-gradient(to right, var(--warm-linen), transparent); }
+.avis-track-wrap::after { right: 0; background: linear-gradient(to left, var(--warm-linen), transparent); }
+.avis-track { display: flex; gap: 1.5rem; animation: scrollAvis 40s linear infinite; width: max-content; }
+.avis-track:hover { animation-play-state: paused; }
+.avis-card { background: white; border: 0.5px solid var(--linen-deep); border-radius: 6px; padding: 2rem; width: 330px; flex-shrink: 0; transition: box-shadow 0.2s; }
+.avis-card:hover { box-shadow: 0 8px 32px rgba(61,48,40,0.08); }
+.avis-top { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
+.avis-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--sage-bg); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--sage-dark); font-weight: 500; }
+.avis-name { font-size: 0.88rem; font-weight: 500; color: var(--bark); }
+.avis-text { font-size: 0.9rem; color: var(--bark-mid); line-height: 1.75; font-style: italic; }
+.avis-google-line { display: flex; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.7rem; color: var(--bark-mid); }
+.google-dot { width: 8px; height: 8px; border-radius: 50%; background: #4285F4; flex-shrink: 0; }
+
+/* ══════════════════════════════════════════
+   INSTAGRAM
+══════════════════════════════════════════ */
+.instagram { background: var(--cream); padding: 5rem 6rem; }
+.instagram-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; }
+.instagram-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.5vw, 2.4rem); font-weight: 300; color: var(--bark); }
+.instagram-handle { font-size: 0.8rem; color: var(--bark-mid); letter-spacing: 0.06em; border-bottom: 1px solid var(--linen-deep); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+.instagram-handle:hover { color: var(--terracotta); border-color: var(--terracotta); }
+.instagram-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
+.instagram-post { aspect-ratio: 1; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; background: var(--linen); color: var(--sage-dark); opacity: 0.7; transition: opacity 0.2s, background 0.2s; }
+.instagram-post:hover { opacity: 1; background: var(--linen-deep); }
+.insta-follow { margin-top: 1.5rem; text-align: center; }
+.insta-follow a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bark); border-bottom: 1px solid rgba(61,48,40,0.3); padding-bottom: 2px; transition: color 0.2s; }
+.insta-follow a:hover { color: var(--terracotta); }
+
+/* ══════════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════════ */
+.final-cta {
+  background: var(--green-cta);
+  padding: 7rem 6rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(61,48,40,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+.final-cta .section-label { justify-content: center; color: rgba(250,247,242,0.5); }
+.final-cta .section-label::before { background: var(--terracotta-light); }
+.final-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 300; color: var(--cream); line-height: 1.1;
+  max-width: 600px; margin: 0 auto 1.5rem;
+  position: relative; z-index: 1;
+}
+.final-cta h2 em { color: var(--terracotta-light); font-style: italic; }
+.final-cta-sub { color: rgba(250,247,242,0.7); font-size: 1rem; line-height: 1.8; max-width: 480px; margin: 0 auto 2.5rem; position: relative; z-index: 1; }
+.cta-actions { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; position: relative; z-index: 1; }
+.cta-guarantee { font-size: 0.75rem; color: rgba(250,247,242,0.45); }
+.contact-details { margin-top: 2.5rem; font-size: 0.85rem; position: relative; z-index: 1; }
+.contact-details p { color: rgba(250,247,242,0.4); margin-bottom: 0.4rem; }
+.contact-details a { color: rgba(250,247,242,0.65); display: block; margin-bottom: 0.3rem; transition: color 0.2s; }
+.contact-details a:hover { color: var(--terracotta-light); }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer {
+  background: var(--terracotta-dark);
+  padding: 2.5rem 6rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1.5rem;
+}
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: rgba(250,247,242,0.88); font-weight: 400; }
+.footer-note { font-size: 0.72rem; color: rgba(250,247,242,0.38); max-width: 460px; line-height: 1.6; }
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { font-size: 0.72rem; color: rgba(250,247,242,0.5); letter-spacing: 0.06em; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(250,247,242,0.9); }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero, .story, .reset-section, .cuisine { grid-template-columns: 1fr; }
+  .piliers-grid { grid-template-columns: 1fr 1fr; }
+  .hero-left { padding: 4rem 2rem 3rem; }
+  .hero-right { min-height: 60vw; }
+  .story { padding: 4rem 1.5rem; gap: 3rem; }
+  .story-quote-box { right: 1rem; }
+  .approche-header { padding: 4rem 1.5rem 2rem; }
+  .piliers-wrap { padding: 3rem 1.5rem; }
+  .reset-section { padding: 4rem 1.5rem; gap: 3rem; }
+  .waitlist { padding: 4rem 1.5rem; }
+  .waitlist-form { flex-direction: column; border-radius: 3px; }
+  .waitlist-stats { gap: 2rem; flex-wrap: wrap; }
+  .cuisine-content { padding: 4rem 1.5rem; }
+  .avis { padding: 4rem 1.5rem; }
+  .instagram { padding: 4rem 1.5rem; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+  .final-cta { padding: 5rem 1.5rem; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="/" class="nav-logo">Aurélie Held</a>
+  <ul class="nav-links">
+    <li><a href="#histoire">Mon histoire</a></li>
+    <li><a href="#approche">Mon approche</a></li>
+    <li><a href="#reset">RESET</a></li>
+    
+    <li><a href="#waitlist" class="nav-cta">Rejoindre RESET</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-left">
+
+    <h1 class="hero-name fade-up">Aurélie<br>Held</h1>
+
+    <p class="hero-eyebrow fade-up-2">Naturopathe fonctionnelle · Cheffe cuisine santé</p>
+
+    <div class="hero-pills fade-up-3">
+      <span class="hero-pill">Troubles digestifs</span>
+      <span class="hero-pill">Inflammation chronique</span>
+      <span class="hero-pill">Déséquilibres hormonaux</span>
+    </div>
+
+    <p class="hero-sub fade-up-4">
+      J'accompagne les femmes épuisées, perdues dans un corps qu'elles ne reconnaissent plus, à se libérer de l'inflammation chronique et retrouver enfin leur énergie.
+    </p>
+
+    <div class="hero-actions fade-up-5">
+      <a href="liste-attente.html" class="btn-primary">Rejoindre RESET</a>
+      <a href="#approche" class="btn-ghost">Découvrir mon approche →</a>
+    </div>
+
+    <div class="hero-trust fade-up-5">
+      <div class="hero-trust-stars">
+        <div class="hero-trust-star"></div>
+        <div class="hero-trust-star"></div>
+        <div class="hero-trust-star"></div>
+        <div class="hero-trust-star"></div>
+        <div class="hero-trust-star"></div>
+      </div>
+      <div class="hero-trust-score">5,0</div>
+      <div class="hero-trust-text">
+        <strong>18 avis Google vérifiés</strong>
+        Elles ont retrouvé leur équilibre
+      </div>
+    </div>
+
+  </div>
+  <div class="hero-right">
+    <img src="hero.jpg" alt="Aurélie Held, naturopathe fonctionnelle spécialisée en troubles digestifs et hormonaux" fetchpriority="high">
+  </div>
+</section>
+
+<!-- ══ SCROLL STRIP ══ -->
+<div class="scroll-strip" aria-hidden="true">
+  <div class="scroll-track">
+    <span class="scroll-item"><span class="scroll-dot"></span>Naturopathie fonctionnelle</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Alimentation anti-inflammatoire</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Santé féminine</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Microbiote & hormones</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Cuisine thérapeutique</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Retraites bien-être</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Accompagnement sur-mesure</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Équilibre durable</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Naturopathie fonctionnelle</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Alimentation anti-inflammatoire</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Santé féminine</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Microbiote & hormones</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Cuisine thérapeutique</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Retraites bien-être</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Accompagnement sur-mesure</span>
+    <span class="scroll-item"><span class="scroll-dot"></span>Équilibre durable</span>
+  </div>
+</div>
+
+<!-- ══ MON HISTOIRE ══ -->
+<section class="story" id="histoire">
+  <div class="story-visual">
+    <img src="histoire.jpg" alt="Aurélie Held naturopathe, parcours personnel avec maladie auto-immune">
+    <div class="story-quote-box">
+      <p>"La santé n'est pas un idéal figé, c'est un chemin de connaissance de soi, fait de conscience et de douceur."</p>
+    </div>
+  </div>
+  <div class="story-content">
+    <p class="story-label">Mon histoire</p>
+    <h2>J'ai traversé une maladie auto-immune. Elle a <em>tout changé.</em></h2>
+    <p>Diagnostiquée à 26 ans après 5 ans d'audit financier à plein régime, j'ai vu mon corps s'arrêter brutalement. Du jour au lendemain, mes articulations ont gonflé, la douleur était partout. Je ne pouvais plus ni me lever, ni marcher.</p>
+    <p>Le diagnostic tombé (spondylarthrite ankylosante), j'ai fait le choix de comprendre plutôt que de subir. 8 mois de voyage, une formation de 1 200h à Euronature, et une conviction profonde : le corps peut se réguler quand on lui donne les bonnes conditions.</p>
+    <p>Aujourd'hui, ma maladie est sous silence. Et j'accompagne les femmes sur ce même chemin.</p>
+    <a href="/mon-histoire" class="story-link">Lire mon histoire complète →</a>
+  </div>
+</section>
+
+<!-- ══ MON APPROCHE ══ -->
+<section class="approche" id="approche">
+  <div class="approche-header">
+    <p class="section-label" style="justify-content:center;">Mon approche</p>
+    <h2>Comprendre les causes des déséquilibres,<br>pas seulement <em>masquer les douleurs.</em></h2>
+    <p>On nous a appris à gérer les inconforts : un anti-douleur, un complément miracle. Ça calme. Temporairement. Mais sans jamais toucher à ce qui crée le déséquilibre, les mêmes troubles reviennent, souvent plus forts. Mon approche est différente : on cherche l'origine, on comprend le terrain, on agit en profondeur pour que le mieux-être dure vraiment.</p>
+  </div>
+
+  <div class="piliers-wrap">
+    <div class="piliers-intro">
+      <p class="section-label" style="justify-content:center;">Quatre piliers</p>
+      <h3>Pour retrouver <em>l'équilibre</em></h3>
+    </div>
+    <div class="piliers-grid">
+      <div class="pilier">
+        <div class="pilier-num">01</div>
+        <h4>Alimentation anti-inflammatoire</h4>
+        <p>Des protocoles nutritionnels adaptés à ton terrain, qui nourrissent sans frustration et remettent le plaisir au cœur de l'assiette.</p>
+      </div>
+      <div class="pilier">
+        <div class="pilier-num">02</div>
+        <h4>Microbiote & hormones</h4>
+        <p>Rééquilibrer la flore intestinale et soutenir l'axe hormonal pour une santé féminine durable et profonde.</p>
+      </div>
+      <div class="pilier">
+        <div class="pilier-num">03</div>
+        <h4>Stress & système nerveux</h4>
+        <p>La régulation du stress est une clé majeure de l'inflammation chronique. Des outils concrets pour le quotidien.</p>
+      </div>
+      <div class="pilier">
+        <div class="pilier-num">04</div>
+        <h4>Reconnexion à soi</h4>
+        <p>Apprendre à lire ses sensations, respecter son rythme, et devenir pleinement actrice de sa propre santé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESET ══ -->
+<section class="reset-section" id="reset">
+  <div>
+    <p class="reset-label">Programme phare</p>
+    <h2>RESET<br><em>L'accompagnement<br>sur-mesure</em></h2>
+    <p class="reset-desc">Pour les femmes qui vivent des troubles digestifs, inflammatoires ou hormonaux et qui veulent retrouver leur énergie, apaiser leur corps et se reconnecter à elles-mêmes de façon durable.</p>
+    <p class="reset-price-label" style="margin-top:0; margin-bottom:2rem;">4 mois · 4 séances 1:1 · 2 lives collectifs · Accompagnement complet</p>
+    <div class="reset-actions">
+      <a href="reset.html" class="btn-cream">Découvrir le programme →</a>
+      <a href="liste-attente.html" class="btn-ghost-light">Rejoindre la liste d'attente →</a>
+    </div>
+  </div>
+  <div class="reset-card">
+    <h3>Ce que contient RESET :</h3>
+    <ul class="reset-items">
+      <li><div class="reset-check"></div>Un bilan naturopathique approfondi de 1h30 pour cartographier ton terrain</li>
+      <li><div class="reset-check"></div>3 séances thématiques : alimentation, microbiote et hormones, autonomisation</li>
+      <li><div class="reset-check"></div>Une séance de clôture de 30 min pour poser la suite</li>
+      <li><div class="reset-check"></div>2 lives collectifs thématiques</li>
+      <li><div class="reset-check"></div>Un protocole personnalisé transmis après chaque séance</li>
+      <li><div class="reset-check"></div>Orientation vers des tests de biologie fonctionnelle si pertinent</li>
+      <li><div class="reset-check"></div>Suivi par mail et accès au groupe WhatsApp de la communauté</li>
+    </ul>
+    <div class="reset-format">
+      <div class="reset-format-item"><div class="num">4</div><div class="lbl">Mois</div></div>
+      <div class="reset-format-item"><div class="num">4</div><div class="lbl">Séances 1:1</div></div>
+      <div class="reset-format-item"><div class="num">100%</div><div class="lbl">Sur-mesure</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CUISINE SANTÉ ══ -->
+<section class="cuisine" id="cuisine">
+  <div class="cuisine-content">
+    <p class="cuisine-sublabel">Cheffe cuisine santé</p>
+    <h2>Nourrir par le goût.<br><em>L'assiette comme<br>outil thérapeutique.</em></h2>
+    <p>Parce que bien manger ne devrait jamais signifier se priver. Je crée des recettes anti-inflammatoires gourmandes et interviens lors de retraites bien-être pour faire de l'assiette une expérience de vitalité.</p>
+    <div class="cuisine-services">
+      <span class="cuisine-service">Retraites & événements bien-être</span>
+      <span class="cuisine-service">Ateliers cuisine santé</span>
+      <span class="cuisine-service">Recettes anti-inflammatoires</span>
+    </div>
+    <p style="font-size:0.88rem; color:var(--bark-mid); margin-top:1.5rem;">Tu organises une retraite ou un événement bien-être ?<br>
+    Écris-moi à <a href="mailto:aurelieheld.naturopathe@gmail.com" style="color:var(--terracotta); text-decoration:none; font-weight:500;">aurelieheld.naturopathe@gmail.com</a></p>
+  </div>
+  <div class="cuisine-photo">
+    <img src="cuisine-main.jpg" alt="Aurélie Held cheffe cuisine santé, recettes anti-inflammatoires gourmandes" loading="lazy">
+  </div>
+</section>
+
+<!-- ══ TÉMOIGNAGES ══ -->
+<section class="avis">
+  <div class="avis-header">
+    <p class="section-label" style="justify-content:center;">Témoignages</p>
+    <h2>Ce qu'elles en disent</h2>
+    <div class="avis-google-badge">
+      <div class="avis-score">5,0</div>
+      <div class="avis-meta">
+        <div class="stars-row">
+          <div class="star"></div><div class="star"></div><div class="star"></div>
+          <div class="star"></div><div class="star"></div>
+        </div>
+        <p class="avis-count">18 avis Google vérifiés</p>
+      </div>
+    </div>
+  </div>
+  <div class="avis-track-wrap">
+    <div class="avis-track">
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">S</div><div><div class="avis-name">Sophie L.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« En 3 mois, ma digestion s'est transformée et mon énergie a retrouvé un niveau que je n'avais plus depuis des années. Aurélie est incroyablement à l'écoute. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 2 semaines</div></div>
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">M</div><div><div class="avis-name">Marie-Claire D.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« Son approche est unique. Les recettes qu'elle partage ont complètement changé ma relation à l'alimentation. Je me sens enfin comprise. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 1 mois</div></div>
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">C</div><div><div class="avis-name">Camille R.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« La retraite avec Aurélie était une révélation. Sa cuisine est pleine de bienfaits et incroyablement savoureuse. Une expérience inoubliable. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 3 semaines</div></div>
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">L</div><div><div class="avis-name">Laure M.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« Le programme RESET a changé ma vie. Je n'aurais jamais pensé retrouver une telle énergie naturellement. Aurélie est bienveillante et vraiment là pour toi. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 2 mois</div></div>
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">A</div><div><div class="avis-name">Amélie T.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« Je recommande à 100% ! Les séances sont profondes, le suivi rigoureux, les recettes délicieuses. Une vraie experte en nutrition santé, humaine et passionnée. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 5 semaines</div></div>
+      <!-- Duplicate -->
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">S</div><div><div class="avis-name">Sophie L.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« En 3 mois, ma digestion s'est transformée et mon énergie a retrouvé un niveau que je n'avais plus depuis des années. Aurélie est incroyablement à l'écoute. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 2 semaines</div></div>
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">M</div><div><div class="avis-name">Marie-Claire D.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« Son approche est unique. Les recettes qu'elle partage ont complètement changé ma relation à l'alimentation. Je me sens enfin comprise. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 1 mois</div></div>
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">C</div><div><div class="avis-name">Camille R.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« La retraite avec Aurélie était une révélation. Sa cuisine est pleine de bienfaits et incroyablement savoureuse. Une expérience inoubliable. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 3 semaines</div></div>
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">L</div><div><div class="avis-name">Laure M.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« Le programme RESET a changé ma vie. Je n'aurais jamais pensé retrouver une telle énergie naturellement. Aurélie est bienveillante et vraiment là pour toi. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 2 mois</div></div>
+      <div class="avis-card"><div class="avis-top"><div class="avis-avatar">A</div><div><div class="avis-name">Amélie T.</div><div class="stars-row"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div></div></div><p class="avis-text">« Je recommande à 100% ! Les séances sont profondes, le suivi rigoureux, les recettes délicieuses. Une vraie experte en nutrition santé, humaine et passionnée. »</p><div class="avis-google-line"><div class="google-dot"></div>Avis Google · il y a 5 semaines</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INSTAGRAM ══ -->
+<section class="instagram">
+  <div style="max-width:620px; margin:0 auto; text-align:center;">
+    <p class="section-label" style="justify-content:center;">Rejoins la communauté</p>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3vw,2.8rem); font-weight:300; color:var(--bark); line-height:1.2; margin-bottom:1.5rem;">
+      On est presque <em style="color:var(--terracotta); font-style:italic;">10 000</em><br>sur Instagram
+    </h2>
+    <p style="font-size:0.97rem; color:var(--bark-mid); line-height:1.85; margin-bottom:2rem;">Naturopathie fonctionnelle, alimentation anti-inflammatoire, recettes gourmandes et coulisses de mon quotidien. Rejoins une communauté de femmes qui reprennent le pouvoir sur leur santé.</p>
+    <a href="https://www.instagram.com/aurelieheld.naturo/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.8rem; background:var(--bark); color:var(--cream); font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; padding:0.9rem 2.2rem; border-radius:2px; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='var(--terracotta)'" onmouseout="this.style.background='var(--bark)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+      Suivre @aurelieheld.naturo
+    </a>
+    <p style="font-size:0.75rem; color:var(--bark-mid); margin-top:1rem; opacity:0.7;">@aurelieheld.naturo</p>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="final-cta">
+  <p class="section-label">Et si c'était maintenant ?</p>
+  <h2>Prête à enfin reprendre<br><em>le pouvoir sur ton corps ?</em></h2>
+  <p class="final-cta-sub">Tu cherches des réponses depuis trop longtemps. RESET est l'accompagnement qui va au fond des choses, pour que tu ne te contentes plus de gérer, mais que tu retrouves vraiment ton énergie.</p>
+  <div class="cta-actions">
+    <a href="reset.html" class="btn-cream">Découvrir le programme RESET →</a>
+  </div>
+  <div class="contact-details">
+    <p>Une question avant de te lancer ?</p>
+    <a href="mailto:aurelieheld.naturopathe@gmail.com">aurelieheld.naturopathe@gmail.com</a>
+    <a href="tel:0619496497">06 19 49 64 97</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <span class="footer-brand">Aurélie Held</span>
+  <p class="footer-note">Un accompagnement naturopathique ne se substitue en aucun cas à la médecine allopathique et à un traitement déjà en cours.</p>
+  <div class="footer-links">
+    <a href="mon-histoire.html">Mon histoire</a>
+    <a href="reset.html">Programme RESET</a>
+    <a href="mailto:aurelieheld.naturopathe@gmail.com">Contact</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+  </div>
+</footer>
+
+<script>
+/* Nav scroll effect */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+/* Waitlist form */
+function handleWaitlist(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('input');
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ Inscription confirmée !';
+  btn.style.background = 'var(--sage-dark)';
+  input.value = '';
+  input.disabled = true;
+  setTimeout(() => {
+    btn.textContent = "Je m'inscris";
+    btn.style.background = '';
+    input.disabled = false;
+  }, 4000);
+}
+
+/* Intersection Observer pour animations au scroll */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.style.opacity = '1';
+      el.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.story, .approche, .reset-section, .waitlist, .cuisine, .avis').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
