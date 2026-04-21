@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RESET — Aurélie Held, Naturopathe</title>
+  <meta name="description" content="RESET, l'accompagnement naturopathique sur-mesure d'Aurélie Held. Troubles digestifs, inflammatoires et hormonaux. 4 mois, 4 séances 1:1." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--creme:#FAF7F2;--linen:#EDE8DF;--terracotta:#C4705A;--terra-dark:#9E4E39;--sage:#4A5E3C;--sage-light:#6B8F5A;--bark:#3D3028;--bark-light:#6B5E54}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--creme);color:var(--bark);font-family:'DM Sans',sans-serif;font-weight:300;font-size:16px;line-height:1.75}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(250,247,242,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(61,48,40,0.07)}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--bark);text-decoration:none}
+    .nav-links{display:flex;gap:36px;list-style:none}
+    .nav-links a{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--bark);text-decoration:none;opacity:0.6;transition:opacity 0.2s}
+    .nav-links a:hover{opacity:1}
+    .btn-terra{display:inline-block;background:var(--terracotta);color:white;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:16px 40px;border-radius:3px;text-decoration:none;transition:background 0.2s}
+    .btn-terra:hover{background:var(--terra-dark)}
+    .btn-terra-lg{display:inline-block;background:var(--terracotta);color:white;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:18px 48px;border-radius:3px;text-decoration:none;transition:background 0.2s}
+    .btn-terra-lg:hover{background:var(--terra-dark)}
+    .btn-bark{display:inline-block;background:var(--bark);color:var(--creme);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:15px 36px;border-radius:3px;text-decoration:none;transition:background 0.2s}
+    .btn-bark:hover{background:var(--terracotta)}
+    .btn-white{display:inline-block;background:white;color:var(--sage);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:16px 40px;border-radius:3px;text-decoration:none;transition:opacity 0.2s}
+    .btn-white:hover{opacity:0.85}
+    .hero{margin-top:72px;position:relative;height:52vh;min-height:340px;max-height:480px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%}
+    .hero-overlay{position:absolute;inset:0;background:rgba(38,28,22,0.28)}
+    .hero-content{position:relative;z-index:2;text-align:center;color:white;padding:0 24px;max-width:800px}
+    .hero-eyebrow{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;opacity:0.8;margin-bottom:20px}
+    .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,14vw,10rem);font-weight:300;line-height:0.9;letter-spacing:0.08em;text-shadow:0 2px 24px rgba(0,0,0,0.5)}
+    .hero-subtitle{margin-top:28px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:300;opacity:0.92;line-height:1.4}
+    h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;line-height:1.2;color:var(--bark);margin-bottom:20px}
+    h2 em{font-style:italic;color:var(--terracotta)}
+    h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2vw,1.6rem);font-weight:400;line-height:1.3;color:var(--bark);margin-bottom:10px}
+    p{font-size:0.95rem;font-weight:300;color:var(--bark-light);line-height:1.8;margin-bottom:14px}
+    p:last-child{margin-bottom:0}
+    strong{font-weight:500;color:var(--bark)}
+    .w760{max-width:760px;margin:0 auto;padding:48px 32px}
+    .w960{max-width:960px;margin:0 auto;padding:48px 32px}
+    .divl{width:40px;height:1px;background:var(--terracotta);margin:0 0 24px}
+    .divc{width:40px;height:1px;background:var(--terracotta);margin:0 auto 24px}
+
+    /* BLOC 1 */
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .douleur-list{list-style:none;margin:14px 0}
+    .douleur-list li{font-size:0.9rem;color:var(--bark-light);padding:8px 0;border-bottom:1px solid rgba(61,48,40,0.07);display:flex;align-items:flex-start;gap:10px}
+    .douleur-list li::before{content:'·';color:var(--terracotta);font-size:1.2rem;flex-shrink:0;line-height:1.4}
+    .histoire-img-small{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:2px;margin-bottom:16px}
+    .histoire-label{font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--terracotta);margin-bottom:10px}
+
+    /* CITATION */
+    .citation-block{background:var(--sage);padding:40px 32px;text-align:center}
+    .citation-block blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:300;color:white;line-height:1.5;max-width:640px;margin:0 auto}
+    .citation-block cite{display:block;margin-top:14px;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-style:normal}
+
+    /* BLOC 2 */
+    .transformation-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:14px 0}
+    .transformation-list li{font-size:0.9rem;color:var(--bark-light);padding:10px 14px;background:white;border-left:3px solid var(--sage-light);line-height:1.6}
+    .transformation-list li strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--sage);margin-bottom:2px}
+    .multi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+    .multi-card{background:white;border-left:2px solid var(--terracotta);padding:14px}
+    .multi-card .mt{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:500;color:var(--bark);margin-bottom:3px}
+    .multi-card .mb{font-size:0.8rem;color:var(--bark-light);line-height:1.6;margin:0}
+
+    /* BLOC 3 CONTENU */
+    .seances-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .sc{background:var(--creme);border-radius:2px;padding:18px;border-top:2px solid var(--terracotta)}
+    .sc.full{grid-column:1/-1;border-top-color:var(--sage)}
+    .sc-num{font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px}
+    .sc.full .sc-num{color:var(--sage)}
+    .sc h3{font-size:1rem;margin-bottom:5px}
+    .sc p{font-size:0.83rem;line-height:1.65}
+    .inclus-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:20px}
+    .inclus-list li{font-size:0.85rem;color:var(--bark-light);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+    .inclus-list li::before{content:'✦';font-size:0.5rem;color:var(--terracotta);flex-shrink:0;margin-top:5px}
+    .cta-box{margin-top:32px;padding:24px;background:var(--creme);border-radius:2px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;border:1px solid rgba(61,48,40,0.1)}
+
+    /* BLOC 4 */
+    .pourqui-list{list-style:none;display:flex;flex-direction:column}
+    .pourqui-list li{font-size:0.85rem;color:var(--bark-light);padding:8px 0;border-bottom:1px solid rgba(61,48,40,0.07);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+    .pourqui-list.oui li::before{content:'✓';font-size:0.73rem;color:var(--sage-light);flex-shrink:0;font-weight:500;margin-top:2px}
+    .pourqui-list.non li::before{content:'×';font-size:0.85rem;color:rgba(61,48,40,0.3);flex-shrink:0}
+    .projection-col{background:var(--sage);padding:24px;border-radius:2px}
+    .projection-col h3{color:white;margin-bottom:14px;font-size:1.2rem}
+    .proj-items{list-style:none;display:flex;flex-direction:column;gap:7px}
+    .proj-items li{font-size:0.85rem;color:rgba(255,255,255,0.85);padding:9px 12px;background:rgba(255,255,255,0.07);border-left:2px solid rgba(255,255,255,0.25);line-height:1.55}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid rgba(61,48,40,0.1)}
+    .faq-question{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 0;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:400;color:var(--bark);text-align:left}
+    .faq-icon{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--terracotta);flex-shrink:0;transition:transform 0.3s;line-height:1}
+    .faq-question.open .faq-icon{transform:rotate(45deg)}
+    .faq-answer{display:none;padding:0 0 14px}
+    .faq-answer p{font-size:0.87rem;color:var(--bark-light)}
+    .faq-answer.open{display:block}
+    .disclaimer{background:var(--linen);padding:18px 48px;text-align:center}
+    .disclaimer p{font-size:0.7rem;color:rgba(61,48,40,0.45);max-width:760px;margin:0 auto;line-height:1.7}
+    footer{background:var(--terra-dark);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:rgba(255,255,255,0.88);text-decoration:none}
+    footer p{font-size:0.72rem;color:rgba(255,255,255,0.4)}
+    footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.72rem;transition:color 0.2s}
+    footer a:hover{color:white}
+    @media(max-width:860px){
+      nav{padding:16px 24px}
+      .nav-links{display:none}
+      .grid2{grid-template-columns:1fr;gap:28px}
+      .seances-grid,.multi-grid{grid-template-columns:1fr}
+      .sc.full{grid-column:auto}
+      .w760,.w960{padding:36px 20px}
+      .disclaimer{padding:16px 20px}
+      footer{padding:24px 20px;flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Aurélie Held</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="mon-histoire.html">Mon histoire</a></li>
+    <li><a href="reset.html">RESET</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="reset-hero.jpg" alt="Aurélie Held, naturopathe" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Accompagnement naturopathique · 4 mois · Sur-mesure</p>
+    <h1 class="hero-title">RESET</h1>
+    <p class="hero-subtitle">Reprends <em>enfin</em> le pouvoir sur ton corps <em>naturellement</em></p>
+  </div>
+</section>
+
+<!-- BLOC 1 : IDENTIFICATION + HISTOIRE CÔTE À CÔTE -->
+<section style="background:var(--creme);">
+  <div class="w960">
+    <div class="grid2">
+      <div>
+        <div class="divl"></div>
+        <h2>Tu ne te reconnais plus<br/>dans ton propre corps ?</h2>
+        <p>Tu as un diagnostic. Ou peut-être pas encore. Mais tu sais qu'il y a quelque chose qui ne va pas, depuis trop longtemps.</p>
+        <ul class="douleur-list">
+          <li>Tu te réveilles épuisée, même après une nuit complète.</li>
+          <li>Ton ventre est une source constante d'inconfort.</li>
+          <li>Tu traverses des poussées inflammatoires qui t'immobilisent.</li>
+          <li>Ton cycle est une épreuve chaque mois.</li>
+          <li>Tu as tout essayé, mais rien ne fonctionne vraiment.</li>
+          <li>Tu te sens seule et incomprise face à ce que tu traverses.</li>
+        </ul>
+        <p style="margin-top:14px;font-size:1rem;font-weight:400;color:var(--bark);">Ce qu'il te manque, ce n'est pas plus d'informations. C'est une vision globale, construite autour de <em>ton</em> terrain.</p>
+      </div>
+      <div>
+        <img src="histoire.jpg" alt="Aurélie Held, naturopathe" class="histoire-img-small" />
+        <p class="histoire-label">Moi aussi, j'ai été là</p>
+        <h3>À 26 ans, j'ai perdu l'usage de mon corps du jour au lendemain.</h3>
+        <p>En 2020, diagnostic de spondylarthrite ankylosante. Articulations gonflées, incapacité à me lever. J'ai voulu me soigner naturellement et je n'ai trouvé aucun accompagnement qui répondait vraiment à mes besoins.</p>
+        <p style="font-weight:400;color:var(--bark);">Après des années de formation et de transformation : <strong>ma maladie est aujourd'hui sous silence, sans biothérapie.</strong> J'ai créé RESET pour que tu n'aies pas à traverser ça seule.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITATION -->
+<div class="citation-block">
+  <blockquote>"Le vrai tournant, ça n'a pas été un complément ou un régime. Ça a été de remettre ma santé au coeur de mes priorités."</blockquote>
+  <cite>Aurélie Held, naturopathe spécialisée en troubles inflammatoires, digestifs et déséquilibres hormonaux</cite>
+</div>
+
+<!-- BLOC 2 : SOLUTION + MULTIFACTORIEL -->
+<section style="background:var(--linen);">
+  <div class="w960">
+    <div class="grid2">
+      <div>
+        <div class="divl"></div>
+        <h2>Alors j'ai créé l'accompagnement que j'aurais aimé avoir.</h2>
+        <p>RESET, c'est un accompagnement sur-mesure ancré dans la naturopathie fonctionnelle. Pas un protocole générique. Construit autour de <em>toi</em>.</p>
+        <ul class="transformation-list">
+          <li><strong>Comprendre ce qui se passe vraiment</strong>Les mécanismes réels, les déclencheurs, les leviers que tu peux actionner.</li>
+          <li><strong>Un protocole adapté à ton terrain</strong>Alimentation, micronutrition, stress, sommeil — pensé pour toi.</li>
+          <li><strong>Ne plus être seule</strong>Quelqu'un à tes côtés qui comprend parce qu'elle l'a vécu.</li>
+          <li><strong>Reprendre confiance en ton corps</strong>Apprendre à l'écouter, l'anticiper, travailler avec lui.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(61,48,40,0.5);margin-bottom:12px;">Comprendre pour agir</p>
+        <h3>Ce que tu vis a rarement une seule cause.</h3>
+        <p>En naturopathie fonctionnelle, le corps est un système global. Intestin, immunité, hormones, stress — tout est connecté.</p>
+        <div class="multi-grid">
+          <div class="multi-card"><p class="mt">Santé intestinale</p><p class="mb">Un microbiote déséquilibré entretient l'inflammation de façon silencieuse.</p></div>
+          <div class="multi-card"><p class="mt">Alimentation</p><p class="mb">Ce que tu manges envoie des signaux à ton immunité chaque jour.</p></div>
+          <div class="multi-card"><p class="mt">Equilibre hormonal</p><p class="mb">Cycle, thyroïde, surrénales — les hormones amplifient ou apaisent tout le reste.</p></div>
+          <div class="multi-card"><p class="mt">Système nerveux</p><p class="mb">Le stress chronique maintient ton corps en état d'alerte permanent.</p></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:36px;text-align:center;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--bark-light);margin-bottom:16px;">Si tu te reconnais dans ces mots, on a probablement des choses à se dire.</p>
+      <a href="liste-attente.html" class="btn-terra">Je veux rejoindre l'accompagnement →</a>
+      <p style="font-size:0.7rem;color:var(--bark-light);margin-top:8px;opacity:0.7;">Places limitées · Sans engagement à ce stade</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOC 3 : CONTENU RESET -->
+<section style="background:var(--linen);border-top:1px solid rgba(61,48,40,0.1);">
+  <div class="w960" style="padding-top:40px;">
+    <p style="font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--terracotta);margin-bottom:8px;">Ce que tu reçois</p>
+    <h2>RESET Individuel</h2>
+    <p style="max-width:540px;">4 mois, 4 séances thématiques et progressives, entièrement adaptées à ton terrain.</p>
+    <div class="seances-grid">
+      <div class="sc full" style="border-top-color:var(--bark-light);">
+        <p class="sc-num" style="color:var(--bark-light);">Avant la première séance</p>
+        <h3>Questionnaire de pré-consultation</h3>
+        <p>Tu reçois un questionnaire détaillé pour que j'arrive préparée à notre première rencontre : ton histoire, tes habitudes, tes antécédents.</p>
+      </div>
+      <div class="sc">
+        <p class="sc-num">Séance 1 — 1h30</p>
+        <h3>Le bilan de terrain</h3>
+        <p>On cartographie tes déclencheurs, ton alimentation, ton environnement. Si pertinent, orientation vers des <strong>tests de biologie fonctionnelle</strong> (microbiote, marqueurs inflammatoires, carences).</p>
+      </div>
+      <div class="sc">
+        <p class="sc-num">Séance 2 — 1:1</p>
+        <h3>Alimentation et inflammation</h3>
+        <p>Nutrition fonctionnelle et alimentation anti-inflammatoire. Affinage du protocole selon tes ressentis.</p>
+      </div>
+      <div class="sc">
+        <p class="sc-num">Séance 3 — 1:1</p>
+        <h3>Microbiote, hormones et mode de vie</h3>
+        <p>Rééquilibre du microbiote, axe hormonal, gestion du stress et du système nerveux.</p>
+      </div>
+      <div class="sc">
+        <p class="sc-num">Séance 4 — 1:1</p>
+        <h3>Bilan et autonomisation</h3>
+        <p>Tu repars avec une feuille de route claire et les outils pour continuer seule, durablement.</p>
+      </div>
+      <div class="sc full">
+        <p class="sc-num">En complément · 2 lives collectifs</p>
+        <h3>Sessions thématiques en groupe</h3>
+        <p>Pour approfondir, poser tes questions en live et créer du lien avec d'autres femmes qui traversent les mêmes problématiques.</p>
+      </div>
+    </div>
+    <ul class="inclus-list" style="max-width:560px;">
+      <li>4 séances individuelles en 1:1 (dont 1 bilan de 1h30)</li>
+      <li>2 lives collectifs thématiques</li>
+      <li>Protocole personnalisé transmis après chaque séance</li>
+      <li>Orientation vers des tests de biologie fonctionnelle si pertinent</li>
+      <li>Ressources pratiques : fiches alimentation, recettes adaptées</li>
+      <li>Suivi par mail entre les séances et accès au groupe WhatsApp</li>
+    </ul>
+    <div class="cta-box">
+      <a href="liste-attente.html" class="btn-terra-lg">Je sécurise ma place →</a>
+      <p style="font-size:0.72rem;color:var(--bark-light);margin:0;">Tu remplis un questionnaire · je te recontacte sous 48h</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOC 4 : POUR QUI + PROJECTION -->
+<section style="background:var(--creme);">
+  <div class="w960">
+    <div class="grid2">
+      <div>
+        <div class="divl"></div>
+        <h3 style="margin-bottom:6px;">RESET est fait pour toi si...</h3>
+        <ul class="pourqui-list oui">
+          <li>Tu vis avec des troubles inflammatoires, digestifs ou hormonaux chroniques</li>
+          <li>Tu es prête à t'investir dans une vraie démarche de fond</li>
+          <li>Tu veux des résultats durables, pas des pansements temporaires</li>
+          <li>Tu en as assez de te sentir seule face à une errance médicale</li>
+          <li>Tu veux reprendre confiance en ta capacité à aller mieux</li>
+        </ul>
+        <h3 style="margin-top:18px;margin-bottom:6px;">Il n'est <em style="font-style:italic;color:var(--terracotta);">pas</em> fait pour toi si...</h3>
+        <ul class="pourqui-list non">
+          <li>Tu cherches une solution miracle sans changer ton quotidien</li>
+          <li>Tu n'es pas prête à observer ton mode de vie avec honnêteté</li>
+          <li>Tu préfères continuer à tout gérer seule</li>
+        </ul>
+        <div style="margin-top:20px;padding:18px;background:var(--linen);border-radius:2px;text-align:center;">
+          <p style="font-size:0.9rem;color:var(--bark);font-weight:400;margin-bottom:12px;">Tu t'es reconnue dans la colonne du haut ?</p>
+          <a href="liste-attente.html" class="btn-bark">Je sécurise ma place →</a>
+        </div>
+      </div>
+      <div>
+        <div class="projection-col">
+          <h3>Imagine-toi dans 4 mois...</h3>
+          <ul class="proj-items">
+            <li>Tu comprends ce qui déclenche tes poussées et tu sais comment les anticiper.</li>
+            <li>Ton niveau d'énergie au réveil a changé. Tu ne te bats plus pour passer la journée.</li>
+            <li>Ton ventre est plus calme. Ton corps réagit différemment à ce que tu lui donnes.</li>
+            <li>Tu n'as plus peur de ton corps. Tu as appris à le lire, à l'écouter, à travailler avec lui.</li>
+            <li>Tu as des outils concrets pour gérer ce qui se passe, sans dépendre de personne.</li>
+            <li>Tu te sens moins seule. Accompagnée par quelqu'un qui comprend vraiment.</li>
+          </ul>
+          <div style="margin-top:18px;text-align:center;">
+            <a href="liste-attente.html" class="btn-white">Je veux que ce soit ma réalité →</a>
+            <p style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:7px;">Tu remplis un questionnaire · je te recontacte sous 48h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section style="background:var(--linen);padding:48px 32px;">
+  <div style="max-width:760px;margin:0 auto;text-align:center;margin-bottom:24px;">
+    <p style="font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--terracotta);margin-bottom:8px;">Témoignages</p>
+    <h2 style="margin-bottom:0;">Ce qu'elles en disent</h2>
+  </div>
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <div class="elfsight-app-af4ada8b-c2df-430c-8b1c-3c0182e61120" data-elfsight-app-lazy></div>
+  <div style="margin-top:32px;text-align:center;">
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--bark);margin-bottom:6px;">Elles ont fait le premier pas. Toi aussi, tu peux.</p>
+    <p style="font-size:0.83rem;color:var(--bark-light);margin-bottom:18px;">Les places pour le prochain accompagnement sont limitées.</p>
+    <a href="liste-attente.html" class="btn-terra">Je sécurise ma place →</a>
+    <p style="font-size:0.7rem;color:var(--bark-light);margin-top:7px;opacity:0.7;">Tu remplis un questionnaire · Aurélie te recontacte sous 48h · Sans engagement</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="w760">
+  <h2 style="text-align:center;margin-bottom:32px;">Questions fréquentes</h2>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">Est-ce compatible avec mon suivi médical ?<span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>Oui, complètement. La naturopathie ne remplace pas la médecine allopathique. Mon travail est complémentaire : on agit sur ton terrain, ton alimentation, ton mode de vie. J'ai moi-même travaillé en parallèle d'un suivi rhumatologique.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">Je n'ai pas encore de diagnostic. Est-ce que RESET peut m'aider ?<span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>Oui. L'errance médicale est très fréquente pour les troubles inflammatoires chroniques. Si tu ressens des manifestations chroniques et que tu veux agir, RESET est tout à fait adapté.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">Comment se passent les séances concrètement ?<span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>Les séances se font en visioconférence. La première dure 1h30, les suivantes environ 1 heure. Entre chaque séance, tu reçois un protocole écrit détaillé et tu peux m'écrire si tu as des questions.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">Est-ce que je peux payer en plusieurs fois ?<span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>Oui, le paiement en 3 fois est possible. On en discute directement lors de l'échange de validation.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">Je suis à bout. Est-ce le bon moment pour commencer ?<span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>Non, tu n'as pas besoin d'aller "un peu mieux" avant de commencer. RESET est pensé pour les personnes épuisées de chercher seules. On commence là où tu en es, à ton rythme.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">Est-ce que les séances sont remboursées ?<span class="faq-icon">+</span></button>
+    <div class="faq-answer"><p>Certaines mutuelles prennent en charge une partie des consultations. Je te fournis une facture à transmettre à ta complémentaire santé.</p></div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  <p>Un accompagnement naturopathique ne se substitue en aucun cas à la médecine allopathique ni à un traitement médical déjà en cours. Aucun diagnostic ni prescription médicale n'est effectué lors des séances.</p>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">Aurélie Held · Naturopathe</a>
+  <p>06 19 49 64 97 · aurelieheld.naturopathe@gmail.com</p>
+  <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+    <a href="https://instagram.com/aurelieheld.naturo" target="_blank" rel="noopener">@aurelieheld.naturo</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn){
+  const a=btn.nextElementSibling;
+  const open=a.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-question').forEach(x=>x.classList.remove('open'));
+  if(!open){a.classList.add('open');btn.classList.add('open')}
+}
+</script>
+</body>
+</html>
