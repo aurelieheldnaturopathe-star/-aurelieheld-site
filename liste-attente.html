@@ -3,32 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liste d'attente RESET — Aurélie Held Naturopathe</title>
+  <title>Liste d'attente | Aurélie Held Naturopathe</title>
+  <meta name="description" content="Rejoins la liste d'attente des accompagnements en naturopathie d'Aurélie Held." />
+  <link rel="canonical" href="https://aurelieheld.com/liste-attente" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --creme:      #FAF7F2;
       --linen:      #EDE8DF;
-      --linen-deep: #E0D8CC;
-      --terracotta: #C4705A;
-      --terra-dark: #9E4E39;
-      --sage:       #4A5E3C;
-      --sage-light: #6B8F5A;
+      --linen-deep: #DED8CC;
+      --terracotta: #7F0F1C;
+      --terra-dark: #6E0C18;
+      --sage:       #175226;
+      --sage-light: #175226;
       --bark:       #3D3028;
       --bark-light: #6B5E54;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--creme); color: var(--bark); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.75; }
+    body { background: var(--creme); color: var(--bark); font-family: 'Mulish', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.75; }
 
     /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(250,247,242,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(61,48,40,0.07); }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--bark); text-decoration: none; }
+    .nav-logo { font-family: 'Poppins', serif; font-size: 1.2rem; font-weight: 400; color: var(--bark); text-decoration: none; }
     .nav-back { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bark-light); text-decoration: none; transition: color 0.2s; }
     .nav-back:hover { color: var(--terracotta); }
 
@@ -36,7 +38,7 @@
     .hero { margin-top: 72px; background: var(--bark); padding: 56px 48px; text-align: center; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(196,112,90,0.15) 0%, transparent 60%); pointer-events: none; }
     .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 16px; position: relative; z-index: 1; }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 300; color: white; line-height: 1.1; position: relative; z-index: 1; margin-bottom: 14px; }
+    .hero h1 { font-family: 'Poppins', serif; font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 300; color: white; line-height: 1.1; position: relative; z-index: 1; margin-bottom: 14px; }
     .hero h1 em { font-style: italic; color: var(--terracotta); }
     .hero-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); position: relative; z-index: 1; max-width: 520px; margin: 0 auto; line-height: 1.7; }
 
@@ -54,7 +56,7 @@
     .recap { padding-right: 52px; position: sticky; top: 100px; }
     .recap-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px; display: flex; align-items: center; gap: 0.7rem; }
     .recap-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--terracotta); }
-    .recap h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 20px; }
+    .recap h2 { font-family: 'Poppins', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 20px; }
     .recap h2 em { font-style: italic; color: var(--terracotta); }
     .recap-desc { font-size: 0.92rem; color: var(--bark-light); line-height: 1.85; margin-bottom: 28px; }
 
@@ -66,8 +68,8 @@
     /* Prix */
     .prix-box { background: var(--linen); border-radius: 3px; padding: 20px 24px; margin-bottom: 20px; }
     .prix-label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bark-light); margin-bottom: 6px; }
-    .prix-chiffre { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--bark); line-height: 1; }
-    .prix-chiffre span { font-size: 1rem; font-family: 'DM Sans', sans-serif; font-weight: 300; opacity: 0.5; }
+    .prix-chiffre { font-family: 'Poppins', serif; font-size: 2.8rem; font-weight: 300; color: var(--bark); line-height: 1; }
+    .prix-chiffre span { font-size: 1rem; font-family: 'Mulish', sans-serif; font-weight: 300; opacity: 0.5; }
     .prix-detail { font-size: 0.78rem; color: var(--bark-light); margin-top: 5px; }
     .prix-facilite { font-size: 0.78rem; color: var(--sage); margin-top: 3px; font-weight: 400; }
 
@@ -91,7 +93,7 @@
 
     /* ── COLONNE DROITE : FORMULAIRE ── */
     .form-wrap { background: white; border: 0.5px solid rgba(61,48,40,0.1); border-radius: 4px; padding: 44px; }
-    .form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--bark); margin-bottom: 8px; }
+    .form-title { font-family: 'Poppins', serif; font-size: 1.6rem; font-weight: 400; color: var(--bark); margin-bottom: 8px; }
     .form-subtitle { font-size: 0.85rem; color: var(--bark-light); margin-bottom: 32px; line-height: 1.65; }
 
     .form-group { margin-bottom: 22px; }
@@ -99,13 +101,13 @@
     .label-note { font-size: 0.72rem; font-weight: 300; text-transform: none; letter-spacing: 0; color: var(--bark-light); margin-left: 4px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-    input[type="text"], input[type="email"], input[type="tel"], select, textarea { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 300; padding: 13px 16px; border: 1px solid rgba(61,48,40,0.18); border-radius: 3px; background: var(--creme); color: var(--bark); outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea { width: 100%; font-family: 'Mulish', sans-serif; font-size: 0.9rem; font-weight: 300; padding: 13px 16px; border: 1px solid rgba(61,48,40,0.18); border-radius: 3px; background: var(--creme); color: var(--bark); outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
     input::placeholder, textarea::placeholder { color: rgba(61,48,40,0.32); }
     input:focus, select:focus, textarea:focus { border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(196,112,90,0.1); }
     textarea { resize: vertical; min-height: 90px; }
     select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5E54' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
 
-    .form-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--bark); margin: 28px 0 18px; padding-top: 24px; border-top: 1px solid rgba(61,48,40,0.08); }
+    .form-section-title { font-family: 'Poppins', serif; font-size: 1.1rem; font-weight: 400; color: var(--bark); margin: 28px 0 18px; padding-top: 24px; border-top: 1px solid rgba(61,48,40,0.08); }
 
     /* Radio */
     .radio-group { display: flex; flex-direction: column; gap: 9px; }
@@ -124,20 +126,20 @@
     .checkbox-item label { font-size: 0.82rem; color: var(--bark-light); font-weight: 300; text-transform: none; letter-spacing: 0; cursor: pointer; margin: 0; line-height: 1.55; }
 
     /* Bouton */
-    .btn-submit { width: 100%; margin-top: 28px; background: var(--terracotta); color: white; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 17px 32px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+    .btn-submit { width: 100%; margin-top: 28px; background: var(--terracotta); color: white; font-family: 'Mulish', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 17px 32px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
     .btn-submit:hover { background: var(--terra-dark); transform: translateY(-1px); }
     .submit-note { text-align: center; margin-top: 12px; font-size: 0.72rem; color: var(--bark-light); line-height: 1.5; }
 
     /* Succès */
     .success-screen { display: none; text-align: center; padding: 48px 24px; }
     .success-icon { width: 60px; height: 60px; border-radius: 50%; background: rgba(74,94,60,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.6rem; }
-    .success-screen h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 400; color: var(--bark); margin-bottom: 14px; }
+    .success-screen h3 { font-family: 'Poppins', serif; font-size: 1.9rem; font-weight: 400; color: var(--bark); margin-bottom: 14px; }
     .success-screen p { font-size: 0.9rem; color: var(--bark-light); line-height: 1.8; max-width: 360px; margin: 0 auto; }
     .success-screen a { color: var(--terracotta); text-decoration: none; }
 
     /* ── FOOTER ── */
     footer { background: var(--terra-dark); padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.88); text-decoration: none; }
+    .footer-logo { font-family: 'Poppins', serif; font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.88); text-decoration: none; }
     footer p { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
 
     /* ── RESPONSIVE ── */
@@ -179,7 +181,7 @@
   <!-- COLONNE GAUCHE -->
   <div class="recap">
     <p class="recap-label">Ce que tu rejoins</p>
-    <h2>RESET —<br><em>L'accompagnement<br>sur-mesure</em></h2>
+    <h2>RESET ,<br><em>L'accompagnement<br>sur-mesure</em></h2>
     <p class="recap-desc">Un accompagnement naturopathique individuel sur 4 mois, pour aller chercher les causes profondes de tes déséquilibres digestifs, inflammatoires et hormonaux, et construire avec toi une stratégie durable.</p>
 
     <ul class="recap-inclus">
@@ -232,7 +234,7 @@
   <div class="form-wrap">
     <div id="form-content">
       <h2 class="form-title">Ton inscription</h2>
-      <p class="form-subtitle">Remplis ce formulaire en 2 minutes. Aurélie te contactera personnellement dès qu'une place se libère — en priorité selon l'ordre d'inscription et la compatibilité de ta situation.</p>
+      <p class="form-subtitle">Remplis ce formulaire en 2 minutes. Aurélie te contactera personnellement dès qu'une place se libère, en priorité selon l'ordre d'inscription et la compatibilité de ta situation.</p>
 
       <form id="waitlist-form" onsubmit="handleSubmit(event)" novalidate>
 
@@ -359,7 +361,7 @@ function handleSubmit(e) {
   btn.textContent = 'Inscription en cours...';
   btn.disabled = true;
 
-  /* Envoi Formspree — remplace VOTRE_ID */
+  /* Envoi Formspree, remplace VOTRE_ID */
   fetch('https://formspree.io/f/maqabzdw', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
